@@ -8,20 +8,18 @@
 </head>
 <body>
 <main>
-        <h1>Iniciar sesión</h1>
-
-        <form action="login_procesar.php" method="post">
-            <div>
-                <label for="">Usuario:</label>
-                <input type="text" name="usuario">
-            </div>
-            <div>
-                <label for="">Contraseña:</label>
-                <input type="password" name="password">
-            </div>
-            <button type="submit">Iniciar sesión</button>
-        </form>
-        
-    </main>
+<h1>Iniciar sesión</h1>
+    <form action="procesar_login.php" method="post">
+        <div>
+            <label for="">Correo:</label>
+            <input type="text" name="correo">
+        </div>
+        <div>
+            <label for="">Contraseña:</label>
+            <input type="password" name="password">
+        </div>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+</main>
 </body>
 </html>

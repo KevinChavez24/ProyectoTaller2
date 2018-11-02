@@ -1,24 +1,18 @@
-<?php
-# Entrada
-$n = $_POST["nombres"];
-$f = $_POST["nacimiento"];
-$c = $_POST["correo"];
-$p = $_POST["contraseña"];
-$p_c = $_POST["confirmacionc"];
-$g = $_POST["genero"]
+<?php 
+$nombre=$_POST["nombres"];
+$nacimiento=$_POST["nacimiento"];
+$password=$_POST["contraseña"];
+$confirmar=$_POST["confirmacionc"];
+$correo=$_POST["correo"];
+$genero=$_POST["genero"];
 
-# Proceso
-$validacion = false;
-if ($p == $p_c) {
-    $validacion=true;
-    $db = new PDO('mysql: host=localhots;dbname=portal2;charset=utf8mb4','root','');
-    $db->query("INSERT INTO usuarios VALUES (NULL, '$n', '$c', '$p', '$f', '$g',  SYSDATE())");
-}
-# Salida
-if ($validacion == true){
-    header('Location: index.php');
+if($password!=$confirmar){
+        header("Location: registrar_usuario.php?error=1");
 }
 else{
-    header('Location: index.php?error=1');
-}
-?> 
+        $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
+        $password=sha1($password);
+        $db->query("INSERT INTO usuario VALUES (NULL, '$nombre', '$correo', '$password','$nacimiento','$genero', SYSDATE())");
+        header("Location: confirmar_registro.php");
+    }
+?>
