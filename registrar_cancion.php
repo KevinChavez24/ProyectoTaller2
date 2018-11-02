@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WorldWrite</title>
+    <link rel="stylesheet" href="partes/styles.css">
 </head>
 <body>
+    <?php include 'partes/menu.php'?>
     <h1>Comparte tu música</h1>
     <div class="cancion">
         <form action="procesar_cancion"method="post">

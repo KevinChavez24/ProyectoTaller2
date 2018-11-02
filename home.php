@@ -17,9 +17,9 @@ $cancion= $sentencia2->fetchALL();
     <link rel="stylesheet" href="partes/styles.css">
 </head>
 <body>
-    <?php include 'partes/menu.php'?>
     <?php if(isset($_SESSION["correo"])){ ?>
         <p>Bienvenido <?php echo $_SESSION["nombre"]?></p>
+    <?php include 'partes/menu.php'?>
         <p>Historias publicadas:</p>
     <div>
         <?php 

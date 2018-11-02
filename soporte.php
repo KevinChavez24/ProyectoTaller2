@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="partes/styles.css">
 </head>
 <body>
+    <?php include 'partes/menu.php' ?>  
     <h1>Escríbenos tus dudas o reclamos :)</h1>
-    <?php include 'partes/menu.php' ?>
 <div class = "soporte">
     <form action="procesar_soporte.php" method ="post">
          <div>
@@ -26,6 +26,5 @@
         <button style="width:300px;height:80px;margin-top:30px" type="submit">Enviar</button>
     </form>
 </div>
-<?php include 'partes/footer.php' ?>
 </body>
 </html>
