@@ -22,10 +22,10 @@
                 <input class="input3" type="email" name ="correo" placeholder = "Correo">
             </div>
             <div>
-                <input class="input4" type="password" name ="contraseña" placeholder = "contraseña">
+                <input class="input4" type="password" name ="contraseña" placeholder = "Contraseña">
             </div>
             <div>
-                <input class="input4" type="password" name ="confirmacionc" placeholder = "contraseña">    
+                <input class="input4" type="password" name ="confirmacionc" placeholder = "Confirmar contraseña">    
             </div>
             <div>
                 <label for="">Masculino</label>

@@ -3,9 +3,9 @@ session_start();
 $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
 $contador=0;
 $sentencia=$db->query("SELECT * FROM historia");
-$historias= $sentencia->fetchALL();
+$historia= $sentencia->fetchALL();
 $sentencia2=$db->query("SELECT * FROM cancion");
-$canciones= $sentencia2->fetchALL();
+$cancion= $sentencia2->fetchALL();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@ $canciones= $sentencia2->fetchALL();
         <p>Historias publicadas:</p>
     <div>
         <?php 
-            foreach ($historias as $h) {?>
+            foreach ($historia as $h) {?>
             <?php $contador=$contador+1;?>  
                 <strong><?php echo $contador?></strong>
                 <h2><?php echo $h["Titulo"]?></h2>
@@ -35,7 +35,7 @@ $canciones= $sentencia2->fetchALL();
     </div>    
     <div>
         <?php 
-            foreach ($canciones as $c) {?>
+            foreach ($cancion as $c) {?>
             <?php $contador=$contador+1;?>  
                 <strong><?php echo $contador?></strong>
                 <h2><?php echo $h["Titulo"]?></h2>

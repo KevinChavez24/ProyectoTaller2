@@ -33,3 +33,18 @@ header{
     padding-right: 370px;
     padding-bottom: 5px;
 }
+.escribir{
+    text-align: center;
+}
+.l1,.l2,.l3{
+    padding-right: 420px;
+
+}
+nav{
+    display: flex;
+    justify-content: center;
+}
+nav a{
+    padding: 10px;
+    text-decoration: none;}
+    

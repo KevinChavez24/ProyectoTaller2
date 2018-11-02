@@ -27,17 +27,16 @@
             <div>
                 <span>Selecciona el género de tu historia: </span>
                 <select name="genero" id="select">
-                    <option value="1">Acción</option>
-                    <option value="2">Ciencia ficción</option>
-                    <option value="3">Fanfic</option>
-                    <option value="4">Humor</option>
-                    <option value="5">Romance</option>
-                    <option value="6">Terror</option>
+                    <option value="Accion">Acción</option>
+                    <option value="Ciencia ficcion">Ciencia ficción</option>
+                    <option value="Fanfic">Fanfic</option>
+                    <option value="Humor">Humor</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Terror">Terror</option>
                 </select>
             </div>
             <button style="width:100px;height:50px;margin-top:30px" type="submit">Publicar</button>
         </form>
     </div>
-    <?php include 'partes/footer.php' ?>
 </body>
 </html>
