@@ -4,40 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registro</title>
-    <link rel="stylesheet" href="partes/styles.css">
-    <?php include 'partes/cabecera.php'?>
-</head> 
+    <link rel="stylesheet" href="estilo.css">
+    <title>WriteWorld</title>
+</head>
 <body>
-    <?php if(isset($_GET["error"])){?>
-    <strong style="color: red">Contraseña no coincide</strong>
-    <?php } ?>
-    <div class = "registro">
-        <form action="procesar_registro.php" method ="post">
-            <div>
-                <input style="width:508px;height:50px" type="text" name ="nombres"placeholder = "Nombres">
+    <main class="contenedor">
+        <div class="publicidad">
+            <div style="margin-bottom: 10px">WriteWorld te ayuda a comunicarte y compartir historias con personas de todo el mundo.</div>
+            <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yc/r/GwFs3_KxNjS.png" alt="">
+        </div>
+        <div class="iniciar">
+            <div class="caja1">
+                <h1 style="color:black">WriteWorld</h1>
+                <div class="registro">
+                    <h2 class="lema">Regístrate para ver historias, conocer nuevas amistades y mucho más. </h2>
+                    <form class="registro1" action="procesar_registro.php" method="post">
+                        <div>
+                            <div><button type="submit">Iniciar sesión con Facebook</button></div>
+                        </div>
+                        <div id="c2k">
+                            <div class="gta">o</div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="correo">
+                                    <input type="email" name="correo" id="" aria-label="Correo electrónico"
+                                    aria-required="true" placeholder="Correo electrónico" required>   
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="correo">
+                                    <input type="text" name="nombrecompleto" id="" aria-label="Nombre Completo"
+                                    aria-required="true" placeholder="Nombre completo" required>   
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="correo">
+                                    <input type="text" name="nombreusuario" id="" aria-label="Nombre usuario"
+                                    aria-required="true" placeholder="nombre.usuario" required>   
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                                <div>
+                                    <div class="correo">
+                                        <input type="password" name="contraseña" id="" aria-label="Contraseña"
+                                        aria-required="true" placeholder="Contraseña" required>   
+                                    </div>
+                                </div>
+                        </div>
+                        <div>
+                                <div>
+                                    <div class="correo">
+                                        <input type="password" name="confirmar" id="" aria-label="Contraseña"
+                                        aria-required="true" placeholder="Confirmar contraseña" required>   
+                                    </div>
+                                </div>
+                        </div>
+                        <div>
+                            <div><button type="submit">Registrarte</button></div>
+                        </div>
+                        <div style="width: 228px; margin: auto">
+                            <p>Al registrate, aceptas nuestras Condiciones, la Política de datos y la Política de cookies.</p>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div>
-                <nav class="fecha">Fecha de nacimiento: </nav>
-                <input class="input5" type="date" name ="nacimiento" >
+            <div class="caja1">
+                <p id="sesion">¿Tienes una cuenta?<a href="login.php"> Inicia sesión</a></p>
             </div>
-            <div>
-                <input class="input3" type="email" name ="correo" placeholder = "Correo">
-            </div>
-            <div>
-                <input class="input4" type="password" name ="contraseña" placeholder = "Contraseña">
-            </div>
-            <div>
-                <input class="input4" type="password" name ="confirmacionc" placeholder = "Confirmar contraseña">    
-            </div>
-            <div>
-                <label for="">Masculino</label>
-                <input class="input6" type="radio" name ="genero" value = "Masculino">
-                <label for="">Femenino</label>
-                <input class="input7" type="radio" name ="genero" value = "Femenino">
-            </div>
-            <button style="width:300px;height:80px;margin-top:30px" type="submit">Registrarme</button>
-        </form>
-    </div>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 </html>

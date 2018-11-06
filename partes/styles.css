@@ -47,3 +47,131 @@ nav{
 nav a{
     padding: 10px;
     text-decoration: none;}
+
+    body{
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        background-color: #fafafa;
+    }
+    
+    .publicidad{
+        font-weight: bold;
+        width: 565px;
+        margin: 180px 0 180px 0;;
+        color: #262626;
+        font-size: 18px;
+        text-align: center;
+    }
+    .iniciar{
+        margin: 10px;
+        width: 350px;
+    }
+    .caja1{
+        background-color: #fff;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        margin: 0 0 10px;
+        padding: 10px 0;
+        color: #999;
+    }
+    
+    .contenedor{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 30px auto 0;
+        width: 70%;
+        text-align: center;
+        color: #262626;
+    }
+    .correo{
+        display: flex;
+        flex-direction: column;
+    }   
+    
+    #sesion{
+        color: #262626;
+        font-size: 14px;
+        margin: 15px;
+        text-align: center;
+    }
+    
+    #sesion>a{
+        color: #3897f0;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    .lema{
+        font-weight: 600;
+        line-height: 20px;
+        font-size: 17px;
+        margin: 0 35px 10px;
+    }
+    
+    .registro{
+        margin-bottom: 20px;
+       
+    }
+    
+    .registro1{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 40px 10px;
+    }
+    
+    button{
+        background-color: #3897f0;
+        border: 1px solid #3897f0;
+        color: #fff;
+        position: relative;
+        cursor: pointer;
+        font-weight: 600;
+        padding: 7px 9px;
+        text-transform: inherit;
+        text-overflow: ellipsis;
+        border-radius: 4px;
+        user-select: none;
+        width: auto;
+        white-space: nowrap;
+        width: 268px;
+        margin-top: 15px;
+        align-items: stretch;
+    }
+    input{
+        padding: 9px 8px 10px 10px;
+        border: 1px solid #999;
+        border-radius: 4px;
+        background-color: #fafafa;
+        margin: 7px 0;
+    }
+    
+    .gta{
+        color: #999;
+        font-size: 13px;
+        margin: 10px 40px;
+        font-weight: 600;
+        line-height: 15px;
+        text-transform: uppercase;
+    }
+    
+    /*Login*/
+    
+    .articulo{
+        border: 1px solid black;
+        margin: auto;
+    }
+    
+    .cajainiciarsesion{
+        margin-bottom: 10px;
+    }
+    
+    .iniciarsesion{
+        display: flex;
+        flex-direction: column;
+    }
