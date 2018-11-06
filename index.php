@@ -9,6 +9,9 @@
     <?php include 'partes/cabecera.php'?>
 </head> 
 <body>
+    <?php if(isset($_GET["error"])){?>
+    <strong style="color: red">Contraseña no coincide</strong>
+    <?php } ?>
     <div class = "registro">
         <form action="procesar_registro.php" method ="post">
             <div>

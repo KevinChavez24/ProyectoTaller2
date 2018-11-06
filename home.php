@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION["correo"])){
+    die("Contenido no disponible");
+}
 $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
 $contador=0;
 $sentencia=$db->query("SELECT * FROM historia");
@@ -19,9 +22,10 @@ $cancion= $sentencia2->fetchALL();
 <body>
     <?php if(isset($_SESSION["correo"])){ ?>
         <p>Bienvenido <?php echo $_SESSION["nombre"]?></p>
+    <?php }?>    
     <?php include 'partes/menu.php'?>
         <p>Historias publicadas:</p>
-    <div>
+    <div class="historias">
         <?php 
             foreach ($historia as $h) {?>
             <?php $contador=$contador+1;?>  
@@ -33,7 +37,8 @@ $cancion= $sentencia2->fetchALL();
                 <p>---------------------------------------------------------------------------------</p>
         <?php }?>
     </div>    
-    <div>
+    <div class="canciones">
+        <p>Canciones publicadas:</p>        
         <?php 
             foreach ($cancion as $c) {?>
             <?php $contador=$contador+1;?>  

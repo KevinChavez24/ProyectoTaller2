@@ -1,3 +1,9 @@
+<?php 
+session_start();
+ if(isset($_SESSION["correo"])){
+    header("home.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +15,9 @@
 <body>
 <main>
 <h1>Iniciar sesión</h1>
+    <?php if(isset($_GET["error"])){?>
+        <strong style="color: red">Datos Incorrectos.</strong>
+    <?php } ?>
     <form action="procesar_login.php" method="post">
         <div>
             <label for="">Correo:</label>

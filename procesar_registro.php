@@ -7,7 +7,7 @@ $correo=$_POST["correo"];
 $genero=$_POST["genero"];
 
 if($password!=$confirmar){
-        header("Location: registrar_usuario.php?error=1");
+        header("Location: index.php?error=1");
 }
 else{
         $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
