@@ -27,7 +27,7 @@ if(!isset($_SESSION["correo"])){
     <p>Descripción:</p> <?php echo $foro[0]["Descripcion"]?>
     <p>Comentario:</p> <?php echo $foro[0]["Comentario"]?>
     <form  action="respuestas.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $foro["id"]?>">
+        <input type="hidden" name="id" value="<?php echo $id?>">
         <button type="submit">Responder</button>
     </form>
 
