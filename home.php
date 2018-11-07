@@ -34,7 +34,7 @@ $cancion= $sentencia2->fetchALL();
                 <p>Género: <?php echo $h["Genero"]?></p>
                 <p>Escrito por: <?php echo $h["Autor"]?></p>
                 <form  action="dar_estrella.php" method="post">
-                    <input type="hidden" name="id" value="<?php echo $u["id"]?>">
+                    <input type="hidden" name="id" value="<?php echo $h["IDHistoria"]?>">
                     <button type="submit">Dar estrella</button>
                 </form>
                 <p>Estrellas: <?php echo $h["Estrellas"]?></p>
