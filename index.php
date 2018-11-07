@@ -38,7 +38,7 @@
             </div>
             <button style="width:300px;height:80px;margin-top:30px" type="submit">Registrarme</button>
         </form>
-            <p>¿Tienes una cuenta?</p>  <a href="login.php">Iniciar Sesión</a> 
+            <p>¿Ya Tienes una cuenta?</p>  <a href="login.php">Iniciar Sesión</a> 
     </div>
 </body>
 </html>
