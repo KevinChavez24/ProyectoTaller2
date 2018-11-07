@@ -12,12 +12,17 @@ if(!isset($_SESSION["correo"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WriteWorld</title>
     <link rel="stylesheet" href="partes/styles.css">
-    <?php include 'partes/menu.php'?>
+    
 </head> 
 <body>
+    <?php include 'partes/cabecera.php'?>
+    <?php include 'partes/menu.php'?>
     <h1>Escribe tu historia</h1>
     <div class = "escribir">
         <form action="procesar_historia.php" method ="post">
+            <div>
+                <input style="width:508px;height:40px" type="text" name ="autor"placeholder="Autor">
+            </div><br>
             <div>
                 <input style="width:508px;height:40px" type="text" name ="titulo"placeholder="Título">
             </div>

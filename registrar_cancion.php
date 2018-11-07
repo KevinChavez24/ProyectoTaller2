@@ -14,12 +14,16 @@ if(!isset($_SESSION["correo"])){
     <link rel="stylesheet" href="partes/styles.css">
 </head>
 <body>
+    <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
     <h1>Comparte tu música</h1>
     <div class="cancion">
-        <form action="procesar_cancion"method="post">
+        <form action="procesar_cancion.php"method="post">
             <div>
-                <input style="width:508px;height:40px" type="text" name ="tituloc"placeholder="Título">
+                <input style="width:508px;height:40px" type="text" name ="autorc" placeholder="Autor">
+            </div><br>  
+            <div>
+                <input style="width:508px;height:40px" type="text" name ="tituloc"placeholder="Cantante - Título">
             </div>
             <br>
             <div>
@@ -28,17 +32,17 @@ if(!isset($_SESSION["correo"])){
             </div>
             <div>
                 <label class="l3">Contenido: </label><br>
-                <textarea name="contc" id="" cols="70" rows="32"></textarea>
-            </div>
+                <input name="contc" type="text" size="67" placeholder="Inserte el link de su canción"></textarea>
+            </div><br>
             <div>
                 <span>Selecciona el género de tu canción: </span>
                 <select name="generoc" id="select">
-                    <option value="Ba">Balada</option>
-                    <option value="Po">Pop</option>
-                    <option value="Ro">Rock</option>
-                    <option value="Me">Metal</option>
-                    <option value="Ra">Rap</option>
-                    <option value="Re">Reggaeton</option>
+                    <option value="Balada">Balada</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Rap">Rap</option>
+                    <option value="Reggaeton">Reggaeton</option>
                 </select>
             </div>
             <button style="width:100px;height:50px;margin-top:30px" type="submit">Compartir</button>

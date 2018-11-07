@@ -17,9 +17,9 @@ $u= $sentencia->fetch();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro</title>
     <link rel="stylesheet" href="partes/styles.css">
-    <?php include 'partes/cabecera.php'?>
 </head> 
 <body>
+    <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
     <?php if(isset($_GET["error"])){?>
     <strong style="color: red">Contraseña no coinciden</strong>
@@ -28,7 +28,7 @@ $u= $sentencia->fetch();
         <form action="procesar_modificar.php" method ="post">
             <div>
                 <input style="width:508px;height:50px" type="text" name ="nnombres" value="<?php echo $u["Nombres"]?>" placeholder = "Nombres">
-                <input type="hidden" name="id" value="<?php echo $u["id"]?>">   
+                <input type="hidden" name="id" value="<?php echo $u["IDCliente"]?>">   
             </div>
             <div><br>
                 <label class="fecha">Fecha de nacimiento: </label><br><br>
@@ -43,8 +43,8 @@ $u= $sentencia->fetch();
             <button style="width:300px;height:80px;margin-top:30px" type="submit">Modificar</button>
         </form>
     </div>
-    <form  action="eliminar_usuario.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $u["id"]?>">
+    <form action="eliminar_usuario.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $u["IDCliente"]?>">
         <button type="submit">Eliminar cuenta</button>
     </form>
 </body>

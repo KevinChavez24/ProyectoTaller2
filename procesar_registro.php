@@ -1,22 +1,18 @@
-<?php
-$nombres = $_POST["nombrecompleto"];
-$correo = $_POST["correo"];
-$nusuario = $_POST["nombreusuario"]
-$contraseña  $_POST["contraseña"];
-$confirmar = $_POST["confirmar"];
+<?php 
+$nombre=$_POST["nombres"];
+$nacimiento=$_POST["nacimiento"];
+$password=$_POST["contraseña"];
+$confirmar=$_POST["confirmacionc"];
+$correo=$_POST["correo"];
+$genero=$_POST["genero"];
 
-if(($nombres=="") or ($correo=="") or ($contraseña=="") or ($confirmar=="")){
-    header('Location: index.php?error=1');
+if($password!=$confirmar){
+        header("Location: index.php?error=1");
 }
 else{
-    if($contraseña!=$confirmar){
-        header('Location: index.php?error=1');
+        $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
+        $password=sha1($password);
+        $db->query("INSERT INTO usuario (Nombres,Correo,Contraseña,FechaNacimiento,Genero,FechaDeRegistro) VALUES ('$nombre', '$correo', '$password','$nacimiento','$genero', SYSDATE())");
+        header("Location: confirmar_registro.php");
     }
-    else{
-        $db = new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
-        $contreseña = sha1($contraseña);
-        $db->query("INSERT INTO usuario VALUES (NULL, '$nombres', '$correo', '$contraseña', NULL, NULL, )");
-        header('Location: home.php');
-    }
-}
 ?>

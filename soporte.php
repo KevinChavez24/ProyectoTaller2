@@ -14,6 +14,7 @@ if(!isset($_SESSION["correo"])){
     <link rel="stylesheet" href="partes/styles.css">
 </head>
 <body>
+    <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php' ?>  
     <h1>Escríbenos tus dudas o reclamos :)</h1>
 <div class = "soporte">

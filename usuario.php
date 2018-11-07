@@ -16,40 +16,45 @@ $usuario= $sentencia->fetchALL();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WorldWrite</title>
     <link rel="stylesheet" href="partes/style.css">
+    
 </head>
 <body>
+    <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
-    <p>Nuestros usuarios:</p>
-    <table class="tabla">
-    <tr>
-        <th></th>
-        <th>Nombres y Apellidos</th>
-        <th>Correo</th>
-        <th>Fecha de Nacimiento</th>
-        <th>Operaciones</th>
-        <th>Seguidores</th>
-    </tr>
-    <?php foreach ($usuario as $u) {?>
-    <?php $contador=$contador+1;?>
-
+    <h2>Nuestros Usuarios: </h2>
+    <div>
+        <table border = 3 class="tabla">
         <tr>
-            <td><?php echo $contador?></td>
-            <td><?php echo $u["Nombres"]?></td>
-            <td><?php echo $u["Correo"]?></td>
-            <td><?php echo $u["FechaNacimiento"]?></td>
-            <td>
-                <form  action="seguir_usuario.php" method="post">
-                    <input type="hidden" name="id" value="<?php echo $u["id"]?>">
-                    <button type="submit">Seguir</button>
-                </form>
-            </td>
+            <th>Nº</th>
+            <th>Nombres y Apellidos</th>
+            <th>Correo</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Seguir</th>
+            <th>Seguidores</th>
         </tr>
-    <?php }?>
-    <?php if(count($usuario) == 0) {?>
+        <?php foreach ($usuario as $u) {?>
+        <?php $contador=$contador+1;?>
+
             <tr>
-                <td style="text-align:center" colspan="6">Aún no hay usuarios registrados :(</td>
+                <td><?php echo $contador?></td>
+                <td><?php echo $u["Nombres"]?></td>
+                <td><?php echo $u["Correo"]?></td>
+                <td><?php echo $u["FechaNacimiento"]?></td>
+                <td>
+                    <form  action="seguir_usuario.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo $u["id"]?>">
+                        <button type="submit">Seguir</button>
+                    </form>
+                </td>
+                <td><?php echo $u["Seguidores"]?></td>
             </tr>
-    <?php }?>
-    </table>
+        <?php }?>
+        <?php if(count($usuario) == 0) {?>
+                <tr>
+                    <td style="text-align:center" colspan="6">Aún no hay usuarios registrados</td>
+                </tr>
+        <?php }?>
+        </table>
+    </div>    
 </body>
 </html>

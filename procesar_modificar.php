@@ -10,7 +10,7 @@ if($npassword!=$nconfirmar){
 else{
         $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
         $npassword=sha1($npassword);
-        $sentencia=$db->query("UPDATE usuario SET Nombres = '$nnombre', FechaNacimiento='$nnacimiento', Contraseña='$npassword' WHERE IDCliente = '$id' ");
+        $sentencia=$db->query("UPDATE usuario SET Nombres = '$nnombre', Contraseña='$npassword', FechaNacimiento='$nnacimiento' WHERE IDCliente = '$id'");
         header("Location: confirmar_modificar.php");
     }
 ?>
