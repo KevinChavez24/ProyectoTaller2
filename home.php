@@ -47,11 +47,12 @@ $cancion= $sentencia2->fetchALL();
             foreach ($cancion as $c) {?>  
                 <h3>Título: <?php echo $c["Titulo"]?></h3>
                 <span>Descripción: <?php echo $c["Descripcion"]?></span>
-                <p>Link: <?php echo $c["Contenido"]?></p>
+                <p>Link: <a href="<?php echo $c["Contenido"]?>"><?php echo $c["Contenido"]?></a></p>
                 <p>Género: <?php echo $c["Genero"]?></p>
                 <p>Compartido por: <?php echo $c["Autor"]?> </p>
                 <p>---------------------------------------------------------------------------------</p>
         <?php }?>
+        
     </div>
 </body>
 </html> 
