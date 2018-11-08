@@ -3,8 +3,9 @@ session_start();
 if(!isset($_SESSION["correo"])){
     die("Contenido no disponible");
 }
+$id = $_SESSION["id"];
 include("partes/conexion.php");
-$sentencia=$db->query("SELECT * FROM usuario" );
+$sentencia=$db->query("SELECT * FROM usuario WHERE IDCliente='$id'" );
 $u= $sentencia->fetch();
 ?>
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ $u= $sentencia->fetch();
     <div class="cancion">
         <form action="procesar_cancion.php"method="post">
             <div>
-                <input style="width:508px;height:40px" type="text" name ="autorc" value="<?php echo $u["Nombres"]?>" readonly="readonly">
+                <input style="width:508px;height:40px" type="hidden" name ="autorc" value="<?php echo $u["Nombres"]?>" readonly="readonly">
             </div><br>  
             <div>
                 <input style="width:508px;height:40px" type="text" name ="tituloc"placeholder="Cantante - Título" required>
@@ -31,7 +32,7 @@ $u= $sentencia->fetch();
             <br>
             <div>
                 <label class="l2">Descripción: </label><br>
-                <textarea name="descrc" id="" cols="70" rows="10"></textarea>
+                <textarea name="descrc" id="" cols="70" rows="10" required></textarea>
             </div>
             <div>
                 <label class="l3">Contenido: </label><br>

@@ -3,8 +3,9 @@ session_start();
 if(!isset($_SESSION["correo"])){
     die("Contenido no disponible");
 }
+$id = $_SESSION["id"];
 include("partes/conexion.php");
-$sentencia=$db->query("SELECT * FROM usuario" );
+$sentencia=$db->query("SELECT * FROM usuario WHERE IDCliente='$id'" );
 $u= $sentencia->fetch();
 ?>
 
@@ -25,7 +26,7 @@ $u= $sentencia->fetch();
     <div class = "escribir">
         <form action="procesar_crear_foro.php" method ="post">
             <div>
-                <input style="width:508px;height:40px" type="text" name ="autor" value="<?php echo $u["Nombres"]?>" readonly="readonly">
+                <input style="width:508px;height:40px" type="hidden" name ="autor" value="<?php echo $u["Nombres"]?>" readonly="readonly">
             </div><br>
             <div>
                 <input style="width:508px;height:40px" type="text" name ="tema"placeholder="Titulo" required>

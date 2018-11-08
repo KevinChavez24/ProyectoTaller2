@@ -42,7 +42,7 @@ $u= $sentencia->fetch();
             <button style="width:300px;height:80px;margin-top:30px" type="submit">Modificar</button>
         </form>
     </div>
-    <form action="eliminar_usuario.php" method="post">
+    <form action="confirmar_eliminar_usuario.php" method="post">
         <input type="hidden" name="id" value="<?php echo $u["IDCliente"]?>">
         <button type="submit">Eliminar cuenta</button>
     </form>

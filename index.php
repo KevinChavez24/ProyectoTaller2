@@ -25,7 +25,7 @@
             </div>
             <div>
                 <nav class="fecha">Fecha de nacimiento: </nav>
-                <input class="input5" type="date" name ="nacimiento" >
+                <input class="input5" type="date" name ="nacimiento" required >
             </div>
             <div>
                 <input class="input3" type="email" name ="correo" placeholder = "Correo" required>
