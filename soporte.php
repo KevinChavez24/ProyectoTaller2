@@ -21,11 +21,11 @@ if(!isset($_SESSION["correo"])){
     <form action="procesar_soporte.php" method ="post">
          <div>
             <label class="l8">Descripción: </label><br>
-            <textarea name="descr" id="" cols="70" rows="10"></textarea>
+            <textarea name="descr" id="" cols="70" rows="10" required></textarea>
         </div>
         <div>
             <label for="">Asunto</label>
-            <select name="asunto" id="asunto">
+            <select name="asunto" id="asunto" >
                     <option value="S">Sugerencia</option>
                     <option value="R">Reclamo</option>
             </select>        

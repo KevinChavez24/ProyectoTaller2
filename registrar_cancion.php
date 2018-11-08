@@ -3,6 +3,9 @@ session_start();
 if(!isset($_SESSION["correo"])){
     die("Contenido no disponible");
 }
+include("partes/conexion.php");
+$sentencia=$db->query("SELECT * FROM usuario" );
+$u= $sentencia->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,10 +23,10 @@ if(!isset($_SESSION["correo"])){
     <div class="cancion">
         <form action="procesar_cancion.php"method="post">
             <div>
-                <input style="width:508px;height:40px" type="text" name ="autorc" placeholder="Autor">
+                <input style="width:508px;height:40px" type="text" name ="autorc" value="<?php echo $u["Nombres"]?>" readonly="readonly">
             </div><br>  
             <div>
-                <input style="width:508px;height:40px" type="text" name ="tituloc"placeholder="Cantante - Título">
+                <input style="width:508px;height:40px" type="text" name ="tituloc"placeholder="Cantante - Título" required>
             </div>
             <br>
             <div>
@@ -32,7 +35,7 @@ if(!isset($_SESSION["correo"])){
             </div>
             <div>
                 <label class="l3">Contenido: </label><br>
-                <input name="contc" type="text" size="67" placeholder="Inserte el link de su canción"></textarea>
+                <input name="contc" type="text" size="67" placeholder="Inserte el link de su canción" required></textarea>
             </div><br>
             <div>
                 <span>Selecciona el género de tu canción: </span>

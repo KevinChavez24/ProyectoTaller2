@@ -4,7 +4,7 @@
 
     $validacion=false;
     $pa=sha1($pa);
-    $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
+    include("partes/conexion.php");
     $sentencia=$db->query("SELECT * FROM usuario  WHERE Correo='$co' AND Contraseña='$pa' ");
     $usuario= $sentencia->fetchALL();
 

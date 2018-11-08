@@ -1,6 +1,6 @@
 <?php 
     $id=$_POST["id"];
-    $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
+    include("partes/conexion.php");
     $db->query("SELECT Estrellas from historia Where IDHistoria='$id'");
     $sentencia=$db->query("SELECT * FROM historia");
     $historia= $sentencia->fetchALL();

@@ -3,11 +3,14 @@ session_start();
 if(!isset($_SESSION["correo"])){
     die("Contenido no disponible");
 }
-$db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
+include("partes/conexion.php");
 $sentencia=$db->query("SELECT * FROM historia");
 $historia= $sentencia->fetchALL();
 $sentencia2=$db->query("SELECT * FROM cancion");
 $cancion= $sentencia2->fetchALL();
+$id= $_SESSION["id"];
+$sentencia3=$db->query("SELECT * FROM usuario WHERE IDCliente= $id" );
+$u= $sentencia3->fetch(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +22,15 @@ $cancion= $sentencia2->fetchALL();
     <link rel="stylesheet" href="partes/styles.css">
 </head>
 <body>
+    
     <?php include 'partes/cabecera.php'?>
-    <?php if(isset($_SESSION["correo"])){ ?>
-        <p>Bienvenido <?php echo $_SESSION["nombre"]?></p>
-    <?php }?>    
+    <?php if(isset($_SESSION["correo"]) And $u["Genero"] == "Masculino"){ ?>
+            <p>Bienvenido <?php echo $_SESSION["nombre"]?></p>          
+    <?php }?>  
+    <?php if(isset($_SESSION["correo"]) And $u["Genero"] == "Femenino"){ ?>
+            <p>Bienvenida <?php echo $_SESSION["nombre"]?></p>          
+    <?php }?>  
+
     <?php include 'partes/menu.php'?>
         <h2>Historias publicadas:</h2>
     <div class="historias">
@@ -39,7 +47,12 @@ $cancion= $sentencia2->fetchALL();
                 </form>
                 <p>Estrellas: <?php echo $h["Estrellas"]?></p>
                 <p>---------------------------------------------------------------------------------</p>
-        <?php }?>
+        <?php }?> 
+        <?php if(count($historia) == 0) {?>
+                <tr>
+                    <td style="text-align:center" colspan="6">Aún no hay historias registradas</td>
+                </tr>   
+        <?php }?>    
     </div>    
     <div class="canciones">
         <h2>Canciones publicadas:</h2>        
@@ -52,6 +65,11 @@ $cancion= $sentencia2->fetchALL();
                 <p>Compartido por: <?php echo $c["Autor"]?> </p>
                 <p>---------------------------------------------------------------------------------</p>
         <?php }?>
+        <?php if(count($cancion) == 0) {?>
+                <tr>
+                    <td style="text-align:center" colspan="6">Aún no hay canciones registradas</td>
+                </tr>   
+        <?php }?>  
         
     </div>
 </body>

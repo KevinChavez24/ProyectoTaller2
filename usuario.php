@@ -4,7 +4,7 @@ if(!isset($_SESSION["correo"])){
     die("Contenido no disponible");
 }
 $contador=0;
-$db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
+include("partes/conexion.php");
 $sentencia=$db->query("SELECT * FROM usuario");
 $usuario= $sentencia->fetchALL();
 ?>

@@ -32,8 +32,8 @@ if(!isset($_SESSION["correo"])){
     </form>
 
             <?php foreach ($rpta as $r) {?>
-                    <p>Autor: </p><?php echo $r["Autor"]?><br>
-                    <p>Contenido: </p><?php echo $r["Contenido"]?><br>
+                    <strong><?php echo $r["Autor"]?></strong> dice : <br>
+                    <?php echo $r["Contenido"]?><br>
             <?php }?>
             <?php if(count($rpta) == 0) {?>
                     <tr>

@@ -3,7 +3,11 @@ session_start();
 if(!isset($_SESSION["correo"])){
     die("Contenido no disponible");
 }
+include("partes/conexion.php");
+$sentencia=$db->query("SELECT * FROM usuario" );
+$u= $sentencia->fetch();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,18 +25,18 @@ if(!isset($_SESSION["correo"])){
     <div class = "escribir">
         <form action="procesar_crear_foro.php" method ="post">
             <div>
-                <input style="width:508px;height:40px" type="text" name ="autor"placeholder="Autor">
+                <input style="width:508px;height:40px" type="text" name ="autor" value="<?php echo $u["Nombres"]?>" readonly="readonly">
             </div><br>
             <div>
-                <input style="width:508px;height:40px" type="text" name ="tema"placeholder="Titulo">
+                <input style="width:508px;height:40px" type="text" name ="tema"placeholder="Titulo" required>
             </div><br>
             <div>
                 <label class="l2">Descripción: </label><br>
-                <textarea name="fdescr" id="" cols="70" rows="10"></textarea>
+                <textarea name="fdescr" id="" cols="70" rows="10" required></textarea>
             </div>
             <div>
                 <label class="l3">Comentario: </label><br>
-                <textarea name="coment" id="" cols="70" rows="32"></textarea>
+                <textarea name="coment" id="" cols="70" rows="32" required></textarea>
             </div>
            
             <button style="width:100px;height:50px;margin-top:30px" type="submit">Crear</button>

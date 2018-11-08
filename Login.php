@@ -22,11 +22,11 @@ session_start();
     <form action="procesar_login.php" method="post">
         <div>
             <label for="">Correo:</label><br>
-            <input type="text" name="correo">
+            <input type="text" name="correo" required>
         </div>
         <div>
             <label for="">Contraseña:</label><br>
-            <input type="password" name="password">
+            <input type="password" name="password" required>
         </div>
         <button type="submit">Iniciar sesión</button>
     </form>

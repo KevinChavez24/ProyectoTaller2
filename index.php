@@ -12,23 +12,29 @@
     <?php if(isset($_GET["error"])){?>
     <strong style="color: red">Contraseña no coincide</strong>
     <?php } ?>
+    <?php if(isset($_GET["correo"])){?>
+    <strong style="color: red">Correo ya existe, por favor elija otro</strong>
+    <?php } ?>
+    <?php if(isset($_GET["usuario"])){?>
+    <strong style="color: red">El nombre de usuario ya esta en uso, por favor elija otro</strong>
+    <?php } ?>
     <div class = "registro">
         <form action="procesar_registro.php" method ="post">
             <div>
-                <input style="width:508px;height:50px" type="text" name ="nombres"placeholder = "Nombre de Usuario" >
+                <input style="width:508px;height:50px" type="text" name ="nombres"placeholder = "Nombre de Usuario" required >
             </div>
             <div>
                 <nav class="fecha">Fecha de nacimiento: </nav>
                 <input class="input5" type="date" name ="nacimiento" >
             </div>
             <div>
-                <input class="input3" type="email" name ="correo" placeholder = "Correo">
+                <input class="input3" type="email" name ="correo" placeholder = "Correo" required>
             </div>
             <div>
-                <input class="input4" type="password" name ="contraseña" placeholder = "Contraseña">
+                <input class="input4" type="password" name ="contraseña" placeholder = "Contraseña" required>
             </div>
             <div>
-                <input class="input4" type="password" name ="confirmacionc" placeholder = "Confirmar contraseña">    
+                <input class="input4" type="password" name ="confirmacionc" placeholder = "Confirmar contraseña" required>    
             </div>
             <div>
                 <label for="">Masculino</label>

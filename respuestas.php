@@ -1,8 +1,12 @@
 <?php
 session_start();
 if(!isset($_SESSION["correo"])){
-    die("Contenido no disponible");
-}
+    die("Contenido no disponible");}
+include("partes/conexion.php");
+$id= $_SESSION["id"];
+$sentencia=$db->query("SELECT * FROM usuario WHERE IDCliente= $id" );
+$u= $sentencia->fetch();    
+
 $id = $_POST["id"];
 ?>
 <!DOCTYPE html>
@@ -23,11 +27,11 @@ $id = $_POST["id"];
         <form action="procesar_respuestas.php" method ="post">
         <input type="hidden" name="id" value="<?php echo $id?>">    
             <div>
-                <input style="width:508px;height:40px" type="text" name ="autorr"placeholder="Autor">
+                <input style="width:508px;height:40px" type="text" name ="autorr" value="<?php echo $u["Nombres"]?>" readonly="readonly">
             </div><br>
             <div>
                 <label class="l3">Comentario: </label><br>
-                <textarea name="comentr" id="" cols="70" rows="32"></textarea>
+                <textarea name="comentr" id="" cols="70" rows="32" required></textarea>
             </div>
             <button style="width:100px;height:50px;margin-top:30px" type="submit">Responder</button>
         </form>

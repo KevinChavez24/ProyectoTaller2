@@ -27,7 +27,7 @@ $foro= $sentencia->fetchALL();
         <tr>
             <th>Nº</th>
             <th>Tema</th>
-            <th>Hecho por</th>
+            <th>Creado por</th>
             <th>Ver</th>
         </tr>
         <?php foreach ($foro as $f) {?>

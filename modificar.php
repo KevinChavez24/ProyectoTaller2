@@ -3,8 +3,7 @@ session_start();
 if(!isset($_SESSION["correo"])){
     die("Contenido no disponible");
 }
-$contador=0;
-$db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
+include("partes/conexion.php");
 $id= $_SESSION["id"];
 $sentencia=$db->query("SELECT * FROM usuario WHERE IDCliente= $id" );
 $u= $sentencia->fetch();
@@ -35,10 +34,10 @@ $u= $sentencia->fetch();
                 <input class="input5" type="date" name ="nnacimiento" >
             </div>
             <div>
-                <input class="input4" type="password" name ="ncontraseña" value="<?php echo $u["Contraseña"]?>" placeholder = "Nueva Contraseña">
+                <input class="input4" type="password" name ="ncontraseña" value="<?php echo $u["Contraseña"]?>" placeholder = "Nueva Contraseña" required>
             </div>
             <div>
-                <input class="input4" type="password" name ="nconfirmacionc" value="<?php echo $u["Contraseña"]?>" placeholder = "Confirmar nueva contraseña">    
+                <input class="input4" type="password" name ="nconfirmacionc" value="<?php echo $u["Contraseña"]?>" placeholder = "Confirmar nueva contraseña" required>    
             </div>
             <button style="width:300px;height:80px;margin-top:30px" type="submit">Modificar</button>
         </form>

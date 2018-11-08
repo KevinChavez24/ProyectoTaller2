@@ -6,13 +6,25 @@ $confirmar=$_POST["confirmacionc"];
 $correo=$_POST["correo"];
 $genero=$_POST["genero"];
 
+include("partes/conexion.php");
+$sentencia=$db->query("SELECT * FROM usuario");
+$usuario= $sentencia->fetchALL();
+
 if($password!=$confirmar){
         header("Location: index.php?error=1");
 }
 else{
-        $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
+        include("partes/conexion.php");
         $password=sha1($password);
         $db->query("INSERT INTO usuario (Nombres,Correo,Contraseña,FechaNacimiento,Genero,FechaDeRegistro) VALUES ('$nombre', '$correo', '$password','$nacimiento','$genero', SYSDATE())");
         header("Location: confirmar_registro.php");
     }
 ?>
+<?php foreach ($usuario as $u) {?>
+        <?php if ($correo==$u["Correo"]){
+        header("Location: index.php?correo=1");
+    }
+    if ($nombre==$u["Nombres"]){
+        header("Location: index.php?usuario=1");
+    }?>
+<?php }?>

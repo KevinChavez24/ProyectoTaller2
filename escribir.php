@@ -3,6 +3,9 @@ session_start();
 if(!isset($_SESSION["correo"])){
     die("Contenido no disponible");
 }
+include("partes/conexion.php");
+$sentencia=$db->query("SELECT * FROM usuario" );
+$u= $sentencia->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,19 +24,19 @@ if(!isset($_SESSION["correo"])){
     <div class = "escribir">
         <form action="procesar_historia.php" method ="post">
             <div>
-                <input style="width:508px;height:40px" type="text" name ="autor"placeholder="Autor">
+                <input style="width:508px;height:40px" type="text" name ="autor" value="<?php echo $u["Nombres"]?>" readonly="readonly">
             </div><br>
             <div>
-                <input style="width:508px;height:40px" type="text" name ="titulo"placeholder="Título">
+                <input style="width:508px;height:40px" type="text" name ="titulo"placeholder="Título" required>
             </div>
             <br>
             <div>
                 <label class="l2">Descripción: </label><br>
-                <textarea name="descr" id="" cols="70" rows="10"></textarea>
+                <textarea name="descr" id="" cols="70" rows="10" required></textarea>
             </div>
             <div>
                 <label class="l3">Contenido: </label><br>
-                <textarea name="cont" id="" cols="70" rows="32"></textarea>
+                <textarea name="cont" id="" cols="70" rows="32" required></textarea>
             </div>
             <div>
                 <span>Selecciona el género de tu historia: </span>
