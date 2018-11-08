@@ -175,3 +175,166 @@ nav a{
         display: flex;
         flex-direction: column;
     }
+
+    /*cabecera*/
+
+    body{
+        background-color: #fafafa;
+        margin: 0;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    
+    .contenedor{
+        
+    }
+    
+    .main{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .head{
+        position: fixed;
+        right: 0;
+        left: 0;
+        backface-visibility: hidden;
+        
+    }
+    
+    .nav{
+        /*color: hsla(0,0%,100%,.75);*/
+        color: #14171a;
+        height: 77px;
+        position: relative;
+        width: 100%;
+    }
+    
+    .one{
+        background-color: #fff;
+        height: 77px;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        border-bottom: 1px solid rgba(0,0,0,.0975);
+    }
+    
+    .two{
+        display: flex;
+        justify-content: center;
+        /*height: 52px;*/
+        margin: auto;
+        max-width: 1190px;
+        width: 100%;
+      
+    }
+    
+    
+    .navegacion{
+        justify-content: flex-start;
+        flex: 1 9999 0%;
+        margin-top: 10px;
+    }
+    
+    .extras{
+        flex: 1 0 0%;
+        justify-content: flex-end;
+        flex-direction: row;
+        margin-top: 10px;
+    }
+    
+    .navegacion>ul{
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .extras>ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: flex-end;
+        padding: 0;
+    }
+    
+    li{
+        margin: 0 20px;
+    }
+    
+    h1{
+        display: block;
+        font-size: 2em;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+    
+    a{
+        text-decoration: none;
+        color: #14171a;
+    }
+    
+    /*Comunidad*/
+    
+    .contenedor_comunidad{
+        padding-top: 60px;
+        margin: 0 auto 30px;
+        max-width: 935px;
+        width: 100%;
+    
+    }
+    
+    .comunidad{
+    
+    }
+    
+    .usuarios{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 220px;
+        flex-direction: row;
+        
+    }
+    .usuario{
+        border: 1px solid rgba(0,0,0,.0975);
+        border-radius: 4px;
+        height: 220px;
+        background-color: #fff;
+        align-content: center;
+        align-items: center;
+        padding-right: 16px;
+        padding-left: 16px;
+        margin-right: 28px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        /*flex: 1 0 0;*/
+        width: 245px;
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+.todo{
+    display: flex;
+    justify-content: center;
+}
+
+.historias{
+    margin-right: 180px;
+    border: 1px solid rgba(0,0,0,.0975);
+    padding: 30px;
+}
+
+.canciones{
+    border: 1px solid rgba(0,0,0,.0975);
+    padding: 30px;
+}
+
+.vercadaforo{
+    margin-left: 15%;
+    margin-top: 5%;
+}

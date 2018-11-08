@@ -27,7 +27,7 @@ $id = $_POST["id"];
         <form action="procesar_respuestas.php" method ="post">
         <input type="hidden" name="id" value="<?php echo $id?>">    
             <div>
-                <input style="width:508px;height:40px" type="text" name ="autorr" value="<?php echo $u["Nombres"]?>" readonly="readonly">
+                <input style="width:508px;height:40px" type="hidden" name ="autorr" value="<?php echo $u["Nombres"]?>" readonly="readonly">
             </div><br>
             <div>
                 <label class="l3">Comentario: </label><br>

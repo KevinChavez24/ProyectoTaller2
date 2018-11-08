@@ -10,6 +10,7 @@ if(!isset($_SESSION["correo"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="partes/styles.css">
     <title>WorldWrite</title>
 </head>
 <body>
@@ -23,22 +24,24 @@ if(!isset($_SESSION["correo"])){
     $sentencia2=$db->query("SELECT * FROM respuestas WHERE IDForo='$id'");
     $rpta= $sentencia2->fetchALL();
 ?>
-    <p>Título:</p> <?php echo $foro[0]["Titulo"]?>
-    <p>Descripción:</p> <?php echo $foro[0]["Descripcion"]?>
-    <p>Comentario:</p> <?php echo $foro[0]["Comentario"]?>
-    <form  action="respuestas.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $id?>">
-        <button type="submit">Responder</button>
-    </form>
+    <div class="vercadaforo">
+        <p>Título:</p> <?php echo $foro[0]["Titulo"]?>
+        <p>Descripción:</p> <?php echo $foro[0]["Descripcion"]?>
+        <p>Comentario:</p> <?php echo $foro[0]["Comentario"]?>
+        <form  action="respuestas.php" method="post">
+            <input type="hidden" name="id" value="<?php echo $id?>">
+            <button type="submit">Responder</button>
+        </form>
 
-            <?php foreach ($rpta as $r) {?>
-                    <strong><?php echo $r["Autor"]?></strong> dice : <br>
-                    <?php echo $r["Contenido"]?><br>
-            <?php }?>
-            <?php if(count($rpta) == 0) {?>
-                    <tr>
-                        <td style="text-align:center" colspan="6">No hay respuestas hasta el momento</td>
-                    </tr>
-            <?php }?>
+                <?php foreach ($rpta as $r) {?>
+                        <strong><?php echo $r["Autor"]?></strong> dice : <br>
+                        <?php echo $r["Contenido"]?><br>
+                <?php }?>
+                <?php if(count($rpta) == 0) {?>
+                        <tr>
+                            <td style="text-align:center" colspan="6">No hay respuestas hasta el momento</td>
+                        </tr>
+                <?php }?>
+    </div>
 </body>
 </html>
