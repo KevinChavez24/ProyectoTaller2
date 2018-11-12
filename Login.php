@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" href="partes/styles.css">
 </head>
 <body>
-<main>
+<main class="main" style="margin-left: 40%; margin-top: 15%">
 <h1>Iniciar sesión</h1>
     <?php if(isset($_GET["error"])){?>
         <strong style="color: red">Datos Incorrectos.</strong>
