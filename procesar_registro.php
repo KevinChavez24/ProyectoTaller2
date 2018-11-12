@@ -9,6 +9,19 @@ $genero=$_POST["genero"];
 include("partes/conexion.php");
 $sentencia=$db->query("SELECT * FROM usuario");
 $usuario= $sentencia->fetchALL();
+$e = false;
+
+foreach ($usuario as $u) {
+     if ($correo==$u["Correo"]){
+    header("Location: index.php?correo=1");
+    $e = true;
+}
+if ($nombre==$u["Nombres"]){
+    header("Location: index.php?usuario=1");
+    $e = true;
+}
+ }
+if ($e == false){
 
 if($password!=$confirmar){
         header("Location: index.php?error=1");
@@ -19,12 +32,5 @@ else{
         $db->query("INSERT INTO usuario (Nombres,Correo,Contraseña,FechaNacimiento,Genero,FechaDeRegistro) VALUES ('$nombre', '$correo', '$password','$nacimiento','$genero', SYSDATE())");
         header("Location: confirmar_registro.php");
     }
+}    
 ?>
-<?php foreach ($usuario as $u) {?>
-        <?php if ($correo==$u["Correo"]){
-        header("Location: index.php?correo=1");
-    }
-    if ($nombre==$u["Nombres"]){
-        header("Location: index.php?usuario=1");
-    }?>
-<?php }?>
