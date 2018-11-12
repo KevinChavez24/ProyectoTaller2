@@ -21,8 +21,9 @@ $usuario= $sentencia->fetchALL();
 <body>
     <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
-    <h2>Nuestros Usuarios: </h2>
-    <div>
+    <main class="main">
+        <div style="margin-top:40px"><h2 style="text-align: center">Nuestros Usuarios </h2></div>
+    <div >
         <table border = 3 class="tabla">
         <tr>
             <th>Nº</th>
@@ -55,6 +56,7 @@ $usuario= $sentencia->fetchALL();
                 </tr>
         <?php }?>
         </table>
-    </div>    
+    </div>
+    </main>    
 </body>
 </html>

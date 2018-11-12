@@ -21,7 +21,7 @@ $u= $sentencia->fetch();
 <body>
     <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
-    <h1>Escribe tu historia</h1>
+    <main class="main"><h1 style="margin-top:50px">Escribe tu historia</h1>
     <div class = "escribir">
         <form action="procesar_historia.php" method ="post">
             <div>
@@ -50,8 +50,9 @@ $u= $sentencia->fetch();
                     <option value="Terror">Terror</option>
                 </select>
             </div>
-            <button style="width:100px;height:50px;margin-top:30px" type="submit">Publicar</button>
+            <button style="width:100px;height:50px;margin:30px" type="submit">Publicar</button>
         </form>
     </div>
+    </main>
 </body>
 </html>

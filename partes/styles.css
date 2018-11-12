@@ -6,6 +6,7 @@ header{
 }
 .registro{
     text-align: center;
+    margin-top: 50px;
     
 }
 .boton{
@@ -43,6 +44,7 @@ header{
 nav{
     display: flex;
     justify-content: center;
+    background-color: fff;
 }
 nav a{
     padding: 10px;
@@ -219,6 +221,7 @@ nav a{
         padding: 0;
         position: relative;
         border-bottom: 1px solid rgba(0,0,0,.0975);
+        width: 100%;
     }
     
     .two{
@@ -226,7 +229,6 @@ nav a{
         justify-content: center;
         /*height: 52px;*/
         margin: auto;
-        max-width: 1190px;
         width: 100%;
       
     }
@@ -337,4 +339,52 @@ nav a{
 .vercadaforo{
     margin-left: 15%;
     margin-top: 5%;
+}
+
+.main{
+    margin: auto;
+    width: 90%;
+}
+
+.ia{
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.azk{
+    font-weight: bold;
+}
+
+.tabla{
+    margin: auto;
+    margin-top: 50px;
+}
+
+tr>th{
+    padding: 10px;
+}
+
+td>form>button{
+    margin: 0 50px;
+    width: 100px;
+}
+
+.music{
+    margin-left: 25%;
+}
+
+.ajm{
+    display: flex;
+    flex-direction: column;
+    margin-left: 35%;
+}
+
+.nregistro{
+    margin-left: 30%;
+    margin-top: 50px;
+}
+
+.title{
+    text-align: center;
+    margin-top:50px;
 }

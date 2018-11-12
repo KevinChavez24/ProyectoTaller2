@@ -20,7 +20,7 @@
                     </li>
                 </ul>
             </div>
-            
+            <h1 style="text-align:center">WriteWorld</h1>
             <div class="extras">
                 <ul>
                     <li>
@@ -33,10 +33,10 @@
                         <a href="soporte.php">Quejas y reclamos</a>
                     </li>
                     <li>
-                        <a href="logout.php">Cerrar Sesion</a>
+                        <a href="modificar.php">Modificar Datos</a>
                     </li>
                     <li>
-                        <a href="modificar.php">Modificar Datos</a>
+                        <a href="logout.php">Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>

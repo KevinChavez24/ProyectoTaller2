@@ -18,6 +18,7 @@
     <?php if(isset($_GET["usuario"])){?>
     <strong style="color: red">El nombre de usuario ya esta en uso, por favor elija otro</strong>
     <?php } ?>
+    <h1 class="title">WriteWorld</h1>
     <div class = "registro">
         <form action="procesar_registro.php" method ="post">
             <div>

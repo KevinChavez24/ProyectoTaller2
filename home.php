@@ -25,17 +25,20 @@ $u= $sentencia3->fetch();
     
     <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
+    <main class="main">
     <?php if(isset($_SESSION["correo"]) And $u["Genero"] == "Masculino"){ ?>
-            <p>Bienvenido <?php echo $_SESSION["nombre"]?></p>          
+            <p class="ia">Bienvenido <span  class="azk"><?php echo $_SESSION["nombre"]?></span></p>          
     <?php }?>  
     <?php if(isset($_SESSION["correo"]) And $u["Genero"] == "Femenino"){ ?>
-            <p>Bienvenida <?php echo $_SESSION["nombre"]?></p>          
+            <p class="ia">Bienvenida <span  class="azk"><?php echo $_SESSION["nombre"]?></span></p>          
     <?php }?>  
 
     
-        <h2>Historias publicadas:</h2>
+     
+        
     <div class="todo">
         <div class="historias">
+        <h2>Historias publicadas:</h2>
             <?php 
                 foreach ($historia as $h) {?> 
                     <h3>Título: <?php echo $h["Titulo"]?></h3>
@@ -75,5 +78,6 @@ $u= $sentencia3->fetch();
             
         </div>
     </div>
+    </main>  
 </body>
 </html> 

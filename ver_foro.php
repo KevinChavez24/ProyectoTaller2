@@ -21,7 +21,7 @@ $foro= $sentencia->fetchALL();
 <body>
     <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
-    <h2>Nuestros temas de conversación: </h2>
+    <main class="main"><h2 style="margin-top: 50px">Nuestros temas de conversación: </h2>
     <div>
         <table border = 3 class="tabla">
         <tr>
@@ -52,5 +52,6 @@ $foro= $sentencia->fetchALL();
         <?php }?>
         </table>
     </div>    
+    </main>
 </body>
 </html>

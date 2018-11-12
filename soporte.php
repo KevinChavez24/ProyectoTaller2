@@ -16,8 +16,9 @@ if(!isset($_SESSION["correo"])){
 <body>
     <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php' ?>  
-    <h1>Escríbenos tus dudas o reclamos :)</h1>
-<div class = "soporte">
+    <main class="main">
+        <div class="ajm"><h1 style="margin-top: 50px">Escríbenos tus dudas o reclamos :)</h1>
+    <div class = "soporte">
     <form action="procesar_soporte.php" method ="post">
          <div>
             <label class="l8">Descripción: </label><br>
@@ -30,8 +31,10 @@ if(!isset($_SESSION["correo"])){
                     <option value="R">Reclamo</option>
             </select>        
         </div>
-        <button style="width:300px;height:80px;margin-top:30px" type="submit">Enviar</button>
+        <button style="width:200px;height:50px;margin-top:30px; margin-left: 150px" type="submit">Enviar</button>
     </form>
 </div>
+</div>
+</main>
 </body>
 </html>

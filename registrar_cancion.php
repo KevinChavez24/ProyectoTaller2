@@ -20,7 +20,8 @@ $u= $sentencia->fetch();
 <body>
     <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
-    <h1>Comparte tu música</h1>
+    <main class="main">
+    <div class="music"><h1 style="margin-top: 50px">Comparte tu música</h1>
     <div class="cancion">
         <form action="procesar_cancion.php"method="post">
             <div>
@@ -36,7 +37,7 @@ $u= $sentencia->fetch();
             </div>
             <div>
                 <label class="l3">Contenido: </label><br>
-                <input name="contc" type="text" size="67" placeholder="Inserte el link de su canción" required></textarea>
+                <input name="contc" type="url" size="67" placeholder="Inserte el link de su canción" required></textarea>
             </div><br>
             <div>
                 <span>Selecciona el género de tu canción: </span>
@@ -52,5 +53,7 @@ $u= $sentencia->fetch();
             <button style="width:100px;height:50px;margin-top:30px" type="submit">Compartir</button>
         </form>
     </div>
+    </div>
+    </main>
 </body>
 </html>

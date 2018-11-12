@@ -22,7 +22,7 @@ $u= $sentencia->fetch();
 <body>
     <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
-    <h1>Crea una conversación</h1>
+    <main class="main"><h1 style="margin-top:50px">Crea una conversación</h1>
     <div class = "escribir">
         <form action="procesar_crear_foro.php" method ="post">
             <div>
@@ -40,8 +40,9 @@ $u= $sentencia->fetch();
                 <textarea name="coment" id="" cols="70" rows="32" required></textarea>
             </div>
            
-            <button style="width:100px;height:50px;margin-top:30px" type="submit">Crear</button>
+            <button style="width:100px;height:40px;margin: 30px 0;" type="submit">Crear</button>
         </form>
     </div>
+    </main>
 </body>
 </html>

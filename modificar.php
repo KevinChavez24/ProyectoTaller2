@@ -21,8 +21,10 @@ $u= $sentencia->fetch();
     <?php include 'partes/cabecera.php'?>
     <?php include 'partes/menu.php'?>
     <?php if(isset($_GET["error"])){?>
-    <strong style="color: red">Contraseña no coinciden</strong>
+    
+        <strong style="color: red">Contraseña no coinciden</strong>
     <?php } ?>
+    <main class="main">
     <div class = "nregistro">
         <form action="procesar_modificar.php" method ="post">
             <div>
@@ -39,12 +41,13 @@ $u= $sentencia->fetch();
             <div>
                 <input class="input4" type="password" name ="nconfirmacionc" value="<?php echo $u["Contraseña"]?>" placeholder = "Confirmar nueva contraseña" required>    
             </div>
-            <button style="width:300px;height:80px;margin-top:30px" type="submit">Modificar</button>
+            <button style="width:200px;height:50px;margin:30px; margin-left: 150px" type="submit">Modificar</button>
         </form>
     </div>
     <form action="confirmar_eliminar_usuario.php" method="post">
         <input type="hidden" name="id" value="<?php echo $u["IDCliente"]?>">
-        <button type="submit">Eliminar cuenta</button>
+        <button type="submit" style="margin-left: 630px">Eliminar cuenta</button>
     </form>
+    </main>
 </body>
 </html>
