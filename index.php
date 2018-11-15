@@ -1,3 +1,9 @@
+<?php 
+    $d = getdate()['mday'];
+    $m = getdate()['mon'];
+    $a = getdate()['year'];
+?>    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +33,7 @@
             </div>
             <div>
                 <nav class="fecha">Fecha de nacimiento: </nav>
-                <input class="input5" type="date" name ="nacimiento" required >
+                <input class="input5" min = "<?php echo $a -80?>-<?php echo $m?>-<?php echo $d?>" max = "<?php echo $a -8?>-<?php echo $m?>-<?php echo $d?>"  type="date" name ="nacimiento" required >
             </div>
             <div>
                 <input class="input3" type="email" name ="correo" placeholder = "Correo" required>
