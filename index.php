@@ -18,6 +18,7 @@
     <?php if(isset($_GET["usuario"])){?>
     <strong style="color: red">El nombre de usuario ya esta en uso, por favor elija otro</strong>
     <?php } ?>
+    
     <h1 class="title">WriteWorld</h1>
     <div class = "registro">
         <form action="procesar_registro.php" method ="post">
@@ -43,7 +44,7 @@
                 <label for="">Femenino</label>
                 <input class="input7" type="radio" name ="genero" value = "Femenino">
             </div>
-            <button style="width:300px;height:80px;margin-top:30px" type="submit">Registrarme</button>
+            <button id = "boton" style="width:300px;height:80px;margin-top:30px" type="submit">Registrarme</button>
         </form>
             <p>¿Ya Tienes una cuenta?</p>  <a href="login.php">Iniciar Sesión</a> 
     </div>

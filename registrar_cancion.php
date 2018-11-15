@@ -36,8 +36,8 @@ $u= $sentencia->fetch();
                 <textarea name="descrc" id="" cols="70" rows="10" required></textarea>
             </div>
             <div>
-                <label class="l3">Contenido: </label><br>
-                <input name="contc" type="url" size="67" placeholder="Inserte el link de su canción" required></textarea>
+                <label class="l3">Coloque la cadena que continua al signo igual de su link de youtube. Ejemplo: </label><br>
+                <input name="contc" type="text" size="67" placeholder="En https://www.youtube.com/watch?v=2ZBtPf7FOoM pondría solo 2ZBtPf7FOoM" required></textarea>
             </div><br>
             <div>
                 <span>Selecciona el género de tu canción: </span>

@@ -18,16 +18,16 @@ if(!isset($_SESSION["correo"])){
     <?php include 'partes/menu.php'?>
     <?php 
     $id = intval($_GET["id"]);
-    $db= new PDO('mysql:host=localhost;dbname=proyectopagina;charset=utf8mb4','root','');
+    include("partes/conexion.php");
     $sentencia=$db->query("SELECT * FROM foro WHERE IDForo='$id'");
     $foro= $sentencia->fetchALL();
     $sentencia2=$db->query("SELECT * FROM respuestas WHERE IDForo='$id'");
     $rpta= $sentencia2->fetchALL();
 ?>
     <div class="vercadaforo">
-        <p>Título:</p> <?php echo $foro[0]["Titulo"]?>
-        <p>Descripción:</p> <?php echo $foro[0]["Descripcion"]?>
-        <p>Comentario:</p> <?php echo $foro[0]["Comentario"]?>
+        <p><strong>Título:</strong></p> <?php echo $foro[0]["Titulo"]?>
+        <p><strong>Descripción:</strong></p> <?php echo $foro[0]["Descripcion"]?>
+        <p><strong>Comentario:</strong></p> <?php echo $foro[0]["Comentario"]?>
         <form  action="respuestas.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id?>">
             <button type="submit">Responder</button>

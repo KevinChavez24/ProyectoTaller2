@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="partes/styles.css">
 </head>
 <body>
-    <p>Registro completado exitosamente</p>
-    <a href="login.php">Comenzar</a>
+    <p style="text-align:center"><strong>Registro completado exitosamente</strong></p>
+    <img style="margin-left:450px" src="https://www.milanocard.it/wp-content/uploads/2017/08/smile-ok.jpg"><br><br>
+    <a class="comenzar" href="login.php"><strong>Comenzar</strong></a>
+
 </body>
 </html> 

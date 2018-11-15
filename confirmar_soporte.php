@@ -9,7 +9,8 @@
 </head>
 <body>
     <?php include 'partes/cabecera.php' ?>  
-    <?php include 'partes/menu.php' ?>
-    <p>Su Reclamo o Sugerencia ha sido enviada.</p>
+    <?php include 'partes/menu.php' ?><br>    
+    <p style="text-align:center">Su Reclamo o Sugerencia ha sido enviada.</p>
+    <img style="margin-left:550px" src="https://thumbs.gfycat.com/FrequentSmugCockatiel-size_restricted.gif" alt="">
 </body>
 </html>

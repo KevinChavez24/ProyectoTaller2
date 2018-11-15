@@ -9,6 +9,6 @@
 </head>
 <body>
     <?php include 'partes/menu.php'?>
-    <p>Modificado correctamente</p>
+    <p style="text-align:center">Modificado correctamente</p>
 </body>
 </html> 

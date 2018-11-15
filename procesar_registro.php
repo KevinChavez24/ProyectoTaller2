@@ -8,7 +8,7 @@ $genero=$_POST["genero"];
 
 include("partes/conexion.php");
 $sentencia=$db->query("SELECT * FROM usuario");
-$usuario= $sentencia->fetchALL();
+$usuario = $sentencia->fetchAll(); 
 $e = false;
 
 foreach ($usuario as $u) {
@@ -21,13 +21,13 @@ if ($nombre==$u["Nombres"]){
     $e = true;
 }
  }
+ 
 if ($e == false){
 
 if($password!=$confirmar){
         header("Location: index.php?error=1");
 }
 else{
-        include("partes/conexion.php");
         $password=sha1($password);
         $db->query("INSERT INTO usuario (Nombres,Correo,Contraseña,FechaNacimiento,Genero,FechaDeRegistro) VALUES ('$nombre', '$correo', '$password','$nacimiento','$genero', SYSDATE())");
         header("Location: confirmar_registro.php");

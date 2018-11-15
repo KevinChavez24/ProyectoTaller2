@@ -24,14 +24,14 @@ $usuario= $sentencia->fetchALL();
     <main class="main">
         <div style="margin-top:40px"><h2 style="text-align: center">Nuestros Usuarios </h2></div>
     <div >
-        <table border = 3 class="tabla">
+        <table border = "3" class="tabla">
         <tr>
             <th>Nº</th>
-            <th>Nombres y Apellidos</th>
-            <th>Correo</th>
-            <th>Fecha de Nacimiento</th>
+            <th>Usuarios </th>
             <th>Seguir</th>
+            <th>Perfil</th>
             <th>Seguidores</th>
+            
         </tr>
         <?php foreach ($usuario as $u) {?>
         <?php $contador=$contador+1;?>
@@ -39,12 +39,16 @@ $usuario= $sentencia->fetchALL();
             <tr>
                 <td><?php echo $contador?></td>
                 <td><?php echo $u["Nombres"]?></td>
-                <td><?php echo $u["Correo"]?></td>
-                <td><?php echo $u["FechaNacimiento"]?></td>
                 <td>
                     <form  action="seguir_usuario.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $u["IDCliente"]?>">
                         <button type="submit">Seguir</button>
+                    </form>
+                </td>
+                <td>
+                    <form  action="ver_perfil.php" method="get">
+                        <input type="hidden" name="idu" value="<?php echo $u["IDCliente"]?>">
+                        <button type="submit">Ver</button>
                     </form>
                 </td>
                 <td><?php echo $u["Seguidores"]?></td>
