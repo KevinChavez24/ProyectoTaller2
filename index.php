@@ -46,9 +46,9 @@
             </div>
             <div>
                 <label for="">Masculino</label>
-                <input class="input6" type="radio" name ="genero" value = "Masculino">
+                <input class="input6" type="radio" name ="genero" value = "Masculino" required>
                 <label for="">Femenino</label>
-                <input class="input7" type="radio" name ="genero" value = "Femenino">
+                <input class="input7" type="radio" name ="genero" value = "Femenino" required>
             </div>
             <button id = "boton" style="width:300px;height:80px;margin-top:30px" type="submit">Registrarme</button>
         </form>
